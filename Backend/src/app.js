@@ -1,9 +1,11 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const User = require('./models/user.model')
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+app.use(cors());
 
 app.get('/',(req,res)=>{
     res.send('Todo funcionando ...');
